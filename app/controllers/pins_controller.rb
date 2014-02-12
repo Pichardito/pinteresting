@@ -30,7 +30,7 @@ class PinsController < ApplicationController
          redirect_to @pin, notice: 'Pin was successfully created.' 
         
       else
-        format.html { render action: 'new' }
+         render action: 'new' 
         
       end
     
@@ -70,6 +70,6 @@ class PinsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
 end
